@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <title>Tea House</title>
+  </head>
+  <body>
+    <!-- banner section starts here -->
+    <div
+      class="parent_div flex flex-col md:flex-row justify-between items-center border-2 border-red-500 min-h-[200px] max-w-[1250px] mx-auto"
+    >
+      <div class="left_div border-2 border-green-500">
+        <h1 class="text-[80px] font-bold">
+          It's good <br />
+          tea time at The<br />
+          Tea House
+        </h1>
+        <p class="text-[18p x] my-10">
+          Tea and Botanical Solutions Supplier Give Optimum<br />
+          Satisfaction To Your Taste Buds.
+        </p>
+        <button
+          class="w-[200px] h-[64px] rounded-lg text-xl text-white bg-gradient-to-r from-[#ff8938] to-[#ff0000]"
+        >
+          Explore More
+          <span><i class="-rotate-45 fa-solid fa-arrow-right"></i></span>
+        </button>
+      </div>
+      <div class="right_div border-2 border-blue-500 relative">
+        <img src="./images/banner.png" class="relative top-[120px]" alt="" />
+
+        <div
+          class="flex items-center w-[255px] h-[100px] bg-white rounded-lg shadow-md absolute left-[80px]"
+        >
+          <span class="text-2xl"><i class="fa-solid fa-star"></i></span>
+          <div class="ml-4">
+            <p class="text-4xl font-bold">5.00</p>
+            <p>Trust Pilot Ratings</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
