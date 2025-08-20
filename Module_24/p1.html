@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Demo Project</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+      .blue {
+        color: blue;
+      }
+      .red {
+        color: red;
+      }
+      .card {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main-title">Welcome to DOM Demo</h1>
+
+    <p class="info">This is paragraph 1</p>
+    <p class="info">This is paragraph 2</p>
+
+    <a id="mylink" href="https://google.com">Go to Google</a>
+
+    <div id="box" class="card red">I am a box</div>
+
+    <button id="changeText">Change Text</button>
+    <button id="toggleClass">Toggle Class</button>
+    <button id="addPara">Add Paragraph</button>
+
+    <script>
+      // 1. getElementById
+      let title = document.getElementById("main-title");
+      title.style.color = "green";
+
+      // 2. getElementsByTagName
+      let paras = document.getElementsByTagName("p");
+      paras[0].style.color = "purple";
+
+      // 3. getElementsByClassName
+      let infos = document.getElementsByClassName("info");
+      infos[1].style.backgroundColor = "lightblue";
+
+      // 4. querySelector
+      let firstPara = document.querySelector(".info");
+      firstPara.innerText = "Changed with querySelector";
+
+      // 5. querySelectorAll
+      let allParas = document.querySelectorAll(".info");
+      allParas.forEach((p) => (p.style.marginLeft = "20px"));
+
+      // 6. getAttribute & setAttribute
+      let link = document.getElementById("mylink");
+      console.log("Old Link:", link.getAttribute("href")); // google
+      link.setAttribute("href", "https://facebook.com");
+      link.innerText = "Go to Facebook";
+
+      // 7. innerText vs innerHTML
+      let box = document.getElementById("box");
+      box.innerText = "This is only Text";
+      box.innerHTML = "<b>This is Bold Text</b>"; // bold সহ আসবে
+
+      // 8. Styling
+      box.style.backgroundColor = "pink";
+      box.style.padding = "15px";
+      box.style.textAlign = "center";
+      box.style.marginLeft = "30px";
+
+      // 9. classList, add, remove
+      document.getElementById("toggleClass").addEventListener("click", () => {
+        box.classList.toggle("blue");
+      });
+
+      // 10. Change text by button
+      document.getElementById("changeText").addEventListener("click", () => {
+        title.innerText = "Title Changed!";
+      });
+
+      // 11. Add new paragraph dynamically
+      document.getElementById("addPara").addEventListener("click", () => {
+        let newP = document.createElement("p");
+        newP.innerText = "New Paragraph added!";
+        newP.classList.add("highlight");
+        document.body.appendChild(newP);
+      });
+    </script>
+  </body>
+</html>

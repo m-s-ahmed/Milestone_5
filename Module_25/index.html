@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Events</title>
+  </head>
+  <body>
+    <h1>Dom Dom Events</h1>
+    <!-- option one -->
+    <button onclick="console.log(7)">Button 1</button>
+    <button onclick="console.log(100)">Button 2</button>
+    <button onclick="console.log('I am Clicked')">Button 3</button>
+
+    <!-- option two -->
+    <button onclick="makeYellow()">Make Yellow</button>
+    <button onclick="makeRed()">Make Red</button>
+
+    <!-- option three -->
+    <button id="btn-make-blue">Make Blue</button>
+    <script>
+      function makeYellow() {
+        document.body.style.backgroundColor = "yellow";
+      }
+      function makeRed() {
+        document.body.style.backgroundColor = "red";
+      }
+    </script>
+    <script src="js/events.js"></script>
+  </body>
+</html>

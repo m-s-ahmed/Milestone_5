@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1.getElementById -->
+    <h2 id="title">Hello World</h2>
+
+    <!-- 2. getElementsByTagName -->
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+
+    <!-- 3. getElementsByClassName -->
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+
+    <!-- 4. querySelector -->
+    <p class="info">First</p>
+    <p class="info">Second</p>
+
+    <!-- 5. querySelectorAll -->
+
+    <!-- 6. getAttribute & setAttribute -->
+    <a id="link" href="https://google.com">Go to Google</a>
+
+    <!-- 7. innerText -->
+    <h3 id="text">Old Text</h3>
+
+    <!-- 8. innerHTML -->
+    <div id="content">Hello</div>
+
+    <!-- 9. style.color, style.backgroundColor, padding, marginLeft, textAlign -->
+    <p id="demo">Styling Example</p>
+
+    <!-- 10. classList, classList.add, classList.remove -->
+    <p id="para" class="red">Hello World</p>
+
+    <!-- 11.onclick -->
+
+    <!-- option one -->
+    <button onclick="console.log(7)">Button 1</button>
+    <button onclick="console.log(100)">Button 2</button>
+    <button onclick="console.log('I am Clicked')">Button 3</button>
+
+    <!-- option two -->
+    <button onclick="makeYellow()">Make Yellow</button>
+    <button onclick="makeRed()">Make Red</button>
+
+    <!-- option three -->
+    <button id="btn-make-blue">Make Blue</button>
+
+    <!-- option four -->
+    <button id="btn-make-green">Make Green</button>
+
+    <!-- 12.childNodes-->
+    <ul id="list">
+      <li>Apple</li>
+      <li>Banana</li>
+    </ul>
+
+    <!-- 13.parentNode -->
+    <!-- 14.createElement -->
+    <!-- 15.appendChild -->
+
+    <script>
+      // 1
+      let heading = document.getElementById("title");
+      heading.style.color = "blue";
+
+      // 2
+      let Paragraphs = document.getElementsByTagName("p");
+      Paragraphs[0].style.color = "red";
+      Paragraphs[1].style.color = "green";
+
+      // 3
+      let boxes = document.getElementsByClassName("box");
+      boxes[0].style.backgroundColor = "yellow";
+      boxes[1].style.backgroundColor = "lightblue";
+
+      // 4
+      let firstPara = document.querySelector(".info");
+      firstPara.style.fontWeight = "bold";
+
+      // 5
+      let allPara = document.querySelectorAll(".info");
+      allPara.forEach((p) => {
+        p.style.color = "purple";
+      });
+
+      // 6
+      let link = document.getElementById("link");
+      // getAttribute
+      console.log(link.getAttribute("href")); // https://google.com
+      // setAttribute
+      link.setAttribute("href", "https://facebook.com");
+      link.innerText = "Go to Facebook";
+
+      // 7
+      document.getElementById("text").innerText = "New Text";
+
+      // 8
+      document.getElementById("content").innerHTML = "<b>Bold Text</b>";
+
+      // 9
+      let demo = document.getElementById("demo");
+      demo.style.color = "white";
+      demo.style.backgroundColor = "black";
+      demo.style.padding = "10px";
+      demo.style.marginLeft = "20px";
+      demo.style.textAlign = "center";
+
+      // 10
+      let para = document.getElementById("para");
+      console.log(para.classList);
+      para.classList.add("blue");
+      console.log(para.classList);
+      para.classList.remove("red");
+
+      //11
+      function makeYellow() {
+        document.body.style.backgroundColor = "yellow";
+      }
+      function makeRed() {
+        document.body.style.backgroundColor = "red";
+      }
+
+      const btnMakeBlue = document.getElementById("btn-make-blue");
+      btnMakeBlue.onclick = function makeBlue() {
+        document.body.style.backgroundColor = "blue";
+      };
+
+      document
+        .getElementById("btn-make-green")
+        .addEventListener("click", function makeGreen() {
+          document.body.style.backgroundColor = "green";
+        });
+
+      // 12
+      let ul = document.getElementById("list");
+      console.log(ul.childNodes);
+
+      // 13
+      let p = document.getElementById("list");
+      console.log(p.parentNode);
+
+      // 14
+      let newDiv = document.createElement("div");
+      newDiv.innerText = "I am a new div";
+      document.body.appendChild(newDiv);
+
+      // 15
+      let ull = document.getElementById("list");
+      let lii = document.createElement("li");
+      let liii = document.createElement("li");
+      lii.innerText = "Mango";
+      liii.innerText = "Old Item";
+
+      ull.appendChild(lii);
+      ull.appendChild(liii);
+
+      // 16
+    </script>
+  </body>
+</html>

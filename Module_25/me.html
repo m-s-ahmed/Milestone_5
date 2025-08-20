@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- (A) HTML attribute -->
+    <button onclick="alert('Button Clicked!')">Click Me</button>
+
+    <!-- (B) JavaScript property -->
+    <button id="btn">Click Me</button>
+
+    <!-- (C) addEventListener -->
+
+    <button id="btnn">Click Me</button>
+
+    <!-- (i) Click Event -->
+    <button id="clickBtn">Click Me</button>
+    <p id="msg"></p>
+
+    <!-- (ii) Mouseover & Mouseout -->
+    <div id="box" style="width: 100px; height: 100px; background: red"></div>
+
+    <!-- (iii) Keydown Event -->
+    <input type="text" id="input" placeholder="Type something" />
+    <p id="output"></p>
+
+    <!-- (iv) Form Submit Event -->
+    <form id="myForm">
+      <input type="text" placeholder="Enter name" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- 4. Event Object -->
+    <button id="eo">Click</button>
+    <script>
+      let btn = document.getElementById("btn");
+      btn.onclick = function () {
+        alert("Clicked by JS property");
+      };
+
+      let btnnn = document.getElementById("btnn");
+      btnnn.addEventListener("click", function () {
+        alert("Clicked with addEventListener!");
+      });
+
+      let clickBtn = document.getElementById("clickBtn");
+      let msg = document.getElementById("msg");
+
+      clickBtn.addEventListener("click", function () {
+        msg.innerText = "Button Clicked!";
+      });
+
+      let box = document.getElementById("box");
+
+      box.addEventListener("mouseover", function () {
+        box.style.background = "blue";
+      });
+
+      box.addEventListener("mouseout", function () {
+        box.style.background = "red";
+      });
+
+      let input = document.getElementById("input");
+      let output = document.getElementById("output");
+
+      input.addEventListener("keydown", function (event) {
+        output.innerText = "You pressed: " + event.key;
+      });
+
+      let form = document.getElementById("myForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Default reload বন্ধ করলো
+        alert("Form Submitted!");
+      });
+
+      document.getElementById("eo").addEventListener("click", function (event) {
+        console.log("Event Type:", event.type);
+        console.log("Target Element:", event.target);
+      });
+    </script>
+  </body>
+</html>
